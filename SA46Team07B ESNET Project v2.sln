@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SA46Team07B ESNET Project v2", "SA46Team07B ESNET Project v2\SA46Team07B ESNET Project v2.csproj", "{746D895B-AC17-4B7B-8254-344A8E292080}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{746D895B-AC17-4B7B-8254-344A8E292080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746D895B-AC17-4B7B-8254-344A8E292080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746D895B-AC17-4B7B-8254-344A8E292080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746D895B-AC17-4B7B-8254-344A8E292080}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {079019E9-8B92-486E-BFBC-E666577E1F4B}
+	EndGlobalSection
+EndGlobal

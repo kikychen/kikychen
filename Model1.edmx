@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="facilityBookingModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee Account">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Employee Details">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="LastName (char9)" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TitleOfCountery" Type="nvarchar" MaxLength="255" />
+          <Property Name="Birth Date" Type="datetime" />
+          <Property Name="PhoneNumber" Type="float" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostalCode" Type="int" />
+          <Property Name="Education" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JoinDate" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Facility Status">
+          <Key>
+            <PropertyRef Name="Facility" />
+          </Key>
+          <Property Name="Facility" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Slot 9-10am" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 10-11am" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 11-12pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 12-1pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 1-2pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 2-3pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 3-4pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 4-5pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 5-6pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 6-7pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 7-8pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Slot 8-9pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostalCode" Type="int" />
+          <Property Name="TitleOfCountery" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="float" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Transaction Records">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="Facility" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="TimeSlot" Type="nvarchar" MaxLength="255" />
+          <Property Name="status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="facilityBookingModel1StoreContainer">
+          <EntitySet Name="Employee Account" EntityType="Self.Employee Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee Details" EntityType="Self.Employee Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facility Status" EntityType="Self.Facility Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction Records" EntityType="Self.Transaction Records" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="facilityBookingModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee_Account">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee_Detail">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName__char9_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TitleOfCountery" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Date" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNumber" Type="Double" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" />
+          <Property Name="Education" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JoinDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Facility_Status">
+          <Key>
+            <PropertyRef Name="Facility" />
+          </Key>
+          <Property Name="Facility" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Slot_9_10am" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_10_11am" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_11_12pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_12_1pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_1_2pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_2_3pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_3_4pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_4_5pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_5_6pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_6_7pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_7_8pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Slot_8_9pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" />
+          <Property Name="TitleOfCountery" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Double" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Transaction_Record">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="Facility" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="TimeSlot" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="facilityBookingEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee_Accounts" EntityType="Self.Employee_Account" />
+          <EntitySet Name="Employee_Details" EntityType="Self.Employee_Detail" />
+          <EntitySet Name="Facility_Status" EntityType="Self.Facility_Status" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Transaction_Records" EntityType="Self.Transaction_Record" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="facilityBookingModel1StoreContainer" CdmEntityContainer="facilityBookingEntities1">
+          <EntitySetMapping Name="Employee_Accounts">
+            <EntityTypeMapping TypeName="facilityBookingModel1.Employee_Account">
+              <MappingFragment StoreEntitySet="Employee Account">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Details">
+            <EntityTypeMapping TypeName="facilityBookingModel1.Employee_Detail">
+              <MappingFragment StoreEntitySet="Employee Details">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName__char9_" ColumnName="LastName (char9)" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="TitleOfCountery" ColumnName="TitleOfCountery" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth Date" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facility_Status">
+            <EntityTypeMapping TypeName="facilityBookingModel1.Facility_Status">
+              <MappingFragment StoreEntitySet="Facility Status">
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
+                <ScalarProperty Name="Slot_9_10am" ColumnName="Slot 9-10am" />
+                <ScalarProperty Name="Slot_10_11am" ColumnName="Slot 10-11am" />
+                <ScalarProperty Name="Slot_11_12pm" ColumnName="Slot 11-12pm" />
+                <ScalarProperty Name="Slot_12_1pm" ColumnName="Slot 12-1pm" />
+                <ScalarProperty Name="Slot_1_2pm" ColumnName="Slot 1-2pm" />
+                <ScalarProperty Name="Slot_2_3pm" ColumnName="Slot 2-3pm" />
+                <ScalarProperty Name="Slot_3_4pm" ColumnName="Slot 3-4pm" />
+                <ScalarProperty Name="Slot_4_5pm" ColumnName="Slot 4-5pm" />
+                <ScalarProperty Name="Slot_5_6pm" ColumnName="Slot 5-6pm" />
+                <ScalarProperty Name="Slot_6_7pm" ColumnName="Slot 6-7pm" />
+                <ScalarProperty Name="Slot_7_8pm" ColumnName="Slot 7-8pm" />
+                <ScalarProperty Name="Slot_8_9pm" ColumnName="Slot 8-9pm" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="facilityBookingModel1.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="TitleOfCountery" ColumnName="TitleOfCountery" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaction_Records">
+            <EntityTypeMapping TypeName="facilityBookingModel1.Transaction_Record">
+              <MappingFragment StoreEntitySet="Transaction Records">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

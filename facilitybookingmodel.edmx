@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="facilitybookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'facilitybooking.dbo.Employee Account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee Account">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'facilitybooking.dbo.Employee Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee Details">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="LastName (char9)" Type="nvarchar" MaxLength="255" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TitleOfCountery" Type="nvarchar" MaxLength="255" />
+          <Property Name="Birth Date" Type="datetime" />
+          <Property Name="PhoneNumber" Type="float" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostalCode" Type="int" />
+          <Property Name="Education" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JoinDate" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'facilitybooking.dbo.Facility Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Facility Status">
+          <Key>
+            <PropertyRef Name="Facility" />
+          </Key>
+          <Property Name="Facility" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="9-10am" Type="nvarchar" MaxLength="255" />
+          <Property Name="10-11am" Type="nvarchar" MaxLength="255" />
+          <Property Name="11-12pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="12-1pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="1-2pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="2-3pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="3-4pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="4-5pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="5-6pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="6-7pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="7-8pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="8-9pm" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'facilitybooking.dbo.Member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PostalCode" Type="int" />
+          <Property Name="TitleOfCountery" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="float" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'facilitybooking.dbo.Transaction Records' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Transaction Records">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
+          <Property Name="Facility" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="TimeSlot" Type="nvarchar" MaxLength="255" />
+          <Property Name="status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="facilitybookingModelStoreContainer">
+          <EntitySet Name="Employee Account" EntityType="Self.Employee Account" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee Account].[EmployeeID] AS [EmployeeID], 
+    [Employee Account].[Password] AS [Password]
+    FROM [dbo].[Employee Account] AS [Employee Account]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Employee Details" EntityType="Self.Employee Details" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee Details].[EmployeeID] AS [EmployeeID], 
+    [Employee Details].[LastName (char9)] AS [LastName (char9)], 
+    [Employee Details].[FirstName] AS [FirstName], 
+    [Employee Details].[TitleOfCountery] AS [TitleOfCountery], 
+    [Employee Details].[Birth Date] AS [Birth Date], 
+    [Employee Details].[PhoneNumber] AS [PhoneNumber], 
+    [Employee Details].[Address] AS [Address], 
+    [Employee Details].[PostalCode] AS [PostalCode], 
+    [Employee Details].[Education] AS [Education], 
+    [Employee Details].[EmailAddress] AS [EmailAddress], 
+    [Employee Details].[JoinDate] AS [JoinDate]
+    FROM [dbo].[Employee Details] AS [Employee Details]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Facility Status" EntityType="Self.Facility Status" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Facility Status].[Facility] AS [Facility], 
+    [Facility Status].[9-10am] AS [9-10am], 
+    [Facility Status].[10-11am] AS [10-11am], 
+    [Facility Status].[11-12pm] AS [11-12pm], 
+    [Facility Status].[12-1pm] AS [12-1pm], 
+    [Facility Status].[1-2pm] AS [1-2pm], 
+    [Facility Status].[2-3pm] AS [2-3pm], 
+    [Facility Status].[3-4pm] AS [3-4pm], 
+    [Facility Status].[4-5pm] AS [4-5pm], 
+    [Facility Status].[5-6pm] AS [5-6pm], 
+    [Facility Status].[6-7pm] AS [6-7pm], 
+    [Facility Status].[7-8pm] AS [7-8pm], 
+    [Facility Status].[8-9pm] AS [8-9pm], 
+    [Facility Status].[Date] AS [Date]
+    FROM [dbo].[Facility Status] AS [Facility Status]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Member" EntityType="Self.Member" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Member].[MemberID] AS [MemberID], 
+    [Member].[FirstName] AS [FirstName], 
+    [Member].[LastName] AS [LastName], 
+    [Member].[BirthDate] AS [BirthDate], 
+    [Member].[Address] AS [Address], 
+    [Member].[PostalCode] AS [PostalCode], 
+    [Member].[TitleOfCountery] AS [TitleOfCountery], 
+    [Member].[PhoneNumber] AS [PhoneNumber], 
+    [Member].[EmailAddress] AS [EmailAddress]
+    FROM [dbo].[Member] AS [Member]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Transaction Records" EntityType="Self.Transaction Records" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Transaction Records].[TransactionID] AS [TransactionID], 
+    [Transaction Records].[MemberID] AS [MemberID], 
+    [Transaction Records].[Facility] AS [Facility], 
+    [Transaction Records].[Date] AS [Date], 
+    [Transaction Records].[TimeSlot] AS [TimeSlot], 
+    [Transaction Records].[status] AS [status]
+    FROM [dbo].[Transaction Records] AS [Transaction Records]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="facilitybookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee_Account">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee_Detail">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName__char9_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TitleOfCountery" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Date" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNumber" Type="Double" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" />
+          <Property Name="Education" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JoinDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Facility_Status">
+          <Key>
+            <PropertyRef Name="Facility" />
+          </Key>
+          <Property Name="Facility" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="C9_10am" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C10_11am" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C11_12pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C12_1pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C1_2pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C2_3pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C3_4pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C4_5pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C5_6pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C6_7pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C7_8pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="C8_9pm" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="Int32" />
+          <Property Name="TitleOfCountery" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Double" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Transaction_Record">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="MemberID" Type="Int32" />
+          <Property Name="Facility" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="TimeSlot" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="facilitybookingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee_Accounts" EntityType="Self.Employee_Account" />
+          <EntitySet Name="Employee_Details" EntityType="Self.Employee_Detail" />
+          <EntitySet Name="Facility_Status" EntityType="Self.Facility_Status" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Transaction_Records" EntityType="Self.Transaction_Record" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="facilitybookingModelStoreContainer" CdmEntityContainer="facilitybookingEntities">
+          <EntitySetMapping Name="Employee_Accounts">
+            <EntityTypeMapping TypeName="facilitybookingModel.Employee_Account">
+              <MappingFragment StoreEntitySet="Employee Account">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee_Details">
+            <EntityTypeMapping TypeName="facilitybookingModel.Employee_Detail">
+              <MappingFragment StoreEntitySet="Employee Details">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName__char9_" ColumnName="LastName (char9)" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="TitleOfCountery" ColumnName="TitleOfCountery" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth Date" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facility_Status">
+            <EntityTypeMapping TypeName="facilitybookingModel.Facility_Status">
+              <MappingFragment StoreEntitySet="Facility Status">
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
+                <ScalarProperty Name="C9_10am" ColumnName="9-10am" />
+                <ScalarProperty Name="C10_11am" ColumnName="10-11am" />
+                <ScalarProperty Name="C11_12pm" ColumnName="11-12pm" />
+                <ScalarProperty Name="C12_1pm" ColumnName="12-1pm" />
+                <ScalarProperty Name="C1_2pm" ColumnName="1-2pm" />
+                <ScalarProperty Name="C2_3pm" ColumnName="2-3pm" />
+                <ScalarProperty Name="C3_4pm" ColumnName="3-4pm" />
+                <ScalarProperty Name="C4_5pm" ColumnName="4-5pm" />
+                <ScalarProperty Name="C5_6pm" ColumnName="5-6pm" />
+                <ScalarProperty Name="C6_7pm" ColumnName="6-7pm" />
+                <ScalarProperty Name="C7_8pm" ColumnName="7-8pm" />
+                <ScalarProperty Name="C8_9pm" ColumnName="8-9pm" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="facilitybookingModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="TitleOfCountery" ColumnName="TitleOfCountery" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaction_Records">
+            <EntityTypeMapping TypeName="facilitybookingModel.Transaction_Record">
+              <MappingFragment StoreEntitySet="Transaction Records">
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Facility" ColumnName="Facility" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
